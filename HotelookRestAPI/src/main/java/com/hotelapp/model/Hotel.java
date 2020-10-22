@@ -51,6 +51,8 @@ public class Hotel {
 		return "hotel [hotelName=" + hotelName + ", hotelId=" + hotelId + ", city=" + city + ", cuisine=" + cuisine
 				+ "]";
 	}
+
+	
 	
 	
 	

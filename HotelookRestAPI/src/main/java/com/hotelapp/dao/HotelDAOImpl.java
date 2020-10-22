@@ -40,6 +40,17 @@ public class HotelDAOImpl implements HotelDAO {
 		// TODO Auto-generated method stub
 		return newHotelList;
 	}
+	
+	public List<Hotel> getByCuisine(String cuisine) {
+		List<Hotel> newHotelList = new ArrayList<>();
+		for (Hotel Hotel : showHotelList())
+		{
+			if(Hotel.getCuisine().equals(cuisine))
+				newHotelList.add(Hotel);
+		}
+		// TODO Auto-generated method stub
+		return newHotelList;
+	}
 
 	@Override
 	public Hotel getById(int Id) {
@@ -54,7 +65,7 @@ public class HotelDAOImpl implements HotelDAO {
 	private List<Hotel> showHotelList(){
 		return Arrays.asList(
 				new Hotel("Garden",101,"Coimbatore","indian"),
-				new Hotel("Delhi-darbar",102,"Delhi","indian"),
+				new Hotel("Delhi-darbar",102,"Delhi","chinese"),
 				new Hotel("Hablis",103,"Mysuru","indian"),
 				new Hotel("ITC-Grandchola",104,"Bangalore","indian"),
 				new Hotel("Kokarako",105,"Mumbai","indian")				);

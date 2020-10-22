@@ -33,9 +33,18 @@ public class HotelController {
 	{
 		return hotelService.getBycity(city);
 	}
+	
+	@GetMapping("/hotels-by-cuisine/{cuisine}")
+	public List<Hotel> getByCuisine(@PathVariable("cuisine")String cuisine)
+	{
+		return hotelService.getByCuisine(cuisine);
+	}
+	
 	@GetMapping("/hotels-by-id/{id}")
 	public Hotel getById(@PathVariable("id")int Id)
 	{
 		return hotelService. getById(Id);
 	}
+	
+	
 }

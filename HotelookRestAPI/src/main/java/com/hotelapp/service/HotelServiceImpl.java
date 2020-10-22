@@ -32,6 +32,12 @@ public class HotelServiceImpl implements HotelService {
 		return hotelDAO.getBycity(city);
 		
 	}
+	
+	public List<Hotel> getByCuisine(String cuisine) {
+		// TODO Auto-generated method stub
+		return hotelDAO.getByCuisine(cuisine);
+		
+	}
 
 	@Override
 	public Hotel getById(int Id) {
