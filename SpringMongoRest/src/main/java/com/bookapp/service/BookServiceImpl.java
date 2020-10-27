@@ -57,25 +57,49 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public List<Book> getBookbyAuthor(String author) throws BookNotFoundException {
 		// TODO Auto-generated method stub
-		return bookRepository.findByAuthor(author);
+		List<Book> bookList = bookRepository.findByAuthor(author);
+		if(bookList.isEmpty())
+		{
+			throw new BookNotFoundException("Author not available");
+		}
+		return bookList;
 	}
 
 	@Override
 	public List<Book> getBookbycategory(String category) throws BookNotFoundException {
 		// TODO Auto-generated method stub
-		return bookRepository.findByCategoryOrderByTitleAsc(category);
+
+		List<Book> bookList = bookRepository.findByCategoryOrderByTitleAsc(category);
+		if(bookList.isEmpty())
+		{
+			throw new BookNotFoundException("Author not available");
+		}
+		return bookList;
 	}
 
 	@Override
-	public List<Book> findByTitleAndAuthor(String title, String author) {
+	public List<Book> findByTitleAndAuthor(String title, String author) throws BookNotFoundException {
 		// TODO Auto-generated method stub
-		return bookRepository.findByTitleAndAuthor(title,author);
+		List<Book> bookList = bookRepository.findByTitleAndAuthor(title,author);
+		if(bookList.isEmpty())
+		{
+			throw new BookNotFoundException("Author not available");
+		}
+		return bookList;
+		
 	}
 
+	
+
 	@Override
-	public List<Book> findBooksByTitleAndPrice(String title, String price) {
+	public List<Book> findBooksByTitleAndPrice(String title, double price) throws BookNotFoundException {
 		// TODO Auto-generated method stub
-		return bookRepository.findBooksByTitleAndPrice(title,price);
+		List<Book> bookList = bookRepository.findBooksByTitleAndPrice(title,price);
+		if(bookList.isEmpty())
+		{
+			throw new BookNotFoundException("Author not available");
+		}
+		return bookList;
 	}
 
 }

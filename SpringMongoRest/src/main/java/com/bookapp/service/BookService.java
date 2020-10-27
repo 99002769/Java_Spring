@@ -17,7 +17,7 @@ public interface BookService {
     List<Book> getAllBooks();
     List<Book> getBookbyAuthor(String author) throws BookNotFoundException;;
     List<Book> getBookbycategory(String category)throws BookNotFoundException;
-    List<Book> findByTitleAndAuthor(String title,String author);
-    List<Book> findBooksByTitleAndPrice(String title,String price);
+    List<Book> findByTitleAndAuthor(String title,String author) throws BookNotFoundException;
+    List<Book> findBooksByTitleAndPrice(String title,double price) throws BookNotFoundException;
 	
 }

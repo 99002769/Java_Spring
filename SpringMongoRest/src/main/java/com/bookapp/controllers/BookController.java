@@ -17,8 +17,8 @@ import com.bookapp.model.Book;
 //import com.bookapp.model.book;
 import com.bookapp.service.BookService;
 
-@RestController
-@RequestMapping("/book-api")
+//@RestController
+//@RequestMapping("/book-api")
 public class BookController {
 	@Autowired
 	BookService bookService;
@@ -80,7 +80,7 @@ public class BookController {
 	
 	@GetMapping("/books/titleprice/{title}/{price}")
 	
-	List<Book> findBooksByTitleAndPrice(@PathVariable("title")String title,@PathVariable("price")String price) throws BookNotFoundException{
+	List<Book> findBooksByTitleAndPrice(@PathVariable("title")String title,@PathVariable("price")Double price) throws BookNotFoundException{
 		return bookService.findBooksByTitleAndPrice(title,price);
 		
 	}
